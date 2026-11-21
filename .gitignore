@@ -1,0 +1,10 @@
+node_modules
+dist
+target
+.vercel
+.venv
+.pgdata
+.env
+.DS_Store
+db/seed.sql
+db/problems.json

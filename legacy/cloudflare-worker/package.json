@@ -1,0 +1,37 @@
+{
+  "name": "knowledge-rpg",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "wrangler types && tsc --noEmit && vite build",
+    "test": "node --test 'src/**/*.test.ts'",
+    "types": "wrangler types",
+    "deploy": "npm run build && wrangler deploy",
+    "db:start": "scripts/db.sh start",
+    "db:stop": "scripts/db.sh stop",
+    "db:reset": "scripts/db.sh reset"
+  },
+  "dependencies": {
+    "@cortex-js/compute-engine": "0.173.0",
+    "@fontsource/klee-one": "5.3.1",
+    "better-auth": "1.7.18",
+    "katex": "0.19.1",
+    "mathlive": "0.111.4",
+    "pg": "8.23.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.67.0",
+    "@types/katex": "0.16.8",
+    "@types/node": "26.6.6",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.2.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.6",
+    "wrangler": "4.158.0"
+  }
+}

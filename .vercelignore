@@ -1,0 +1,13 @@
+target
+legacy
+.pgdata
+.venv
+.env
+.env.*
+.claude
+node_modules
+dist
+tests
+content
+scripts
+db

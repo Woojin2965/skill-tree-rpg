@@ -1,0 +1,35 @@
+{
+  "name": "knowledge-rpg",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "api": "set -a && . ./.env && set +a && cargo run",
+    "build": "tsc --noEmit && vite build",
+    "test": "cargo test && cargo build && node --test 'src/**/*.test.ts' 'tests/*.test.ts'",
+    "db:start": "scripts/db.sh start",
+    "db:stop": "scripts/db.sh stop",
+    "db:reset": "scripts/db.sh reset",
+    "db:deploy": "scripts/db.sh deploy"
+  },
+  "dependencies": {
+    "@fontsource/dotgothic16": "5.3.1",
+    "@fontsource/mulish": "5.3.0",
+    "@fontsource/press-start-2p": "5.3.0",
+    "katex": "0.19.1",
+    "mathlive": "0.111.4",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/katex": "0.16.8",
+    "@types/node": "26.6.6",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.2.1",
+    "pg": "8.23.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.6"
+  }
+}
