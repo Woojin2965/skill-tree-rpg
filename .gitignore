@@ -8,3 +8,4 @@ target
 .DS_Store
 db/seed.sql
 db/problems.json
+NOTES.md
