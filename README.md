@@ -32,7 +32,7 @@ I built it alone, end to end: game design, problem generation, a Rust backend, t
 | Content | Python and SymPy, offline only; skills are Obsidian-compatible Markdown notes |
 | Hosting | Vercel |
 
-## Engineering highlights
+## What I considered
 
 **A safe answer checker, written from scratch.** The usual shortcut is to pass the student's input to a computer-algebra system's parser, such as SymPy's `sympify`, but that can run arbitrary code. `server/grade.rs` instead parses a small LaTeX grammar by hand.
 - It caps input length, nesting, literal size, exponents and polynomial degree before doing any arithmetic.
@@ -65,29 +65,3 @@ scripts/               Problem generator (SymPy) and local Postgres helper
 db/migrations/         SQL schema
 tests/                 HTTP tests of the game rules against a real database
 ```
-
-## Running locally
-
-You need Node, Rust, Python 3.13 and PostgreSQL 17.
-
-```bash
-npm install
-python3.13 -m venv .venv && .venv/bin/pip install sympy==1.14.0
-cp .env.example .env
-npm run db:start      # local Postgres on port 5433
-npm run db:reset      # create the schema and generate the problems (about a minute)
-npm run api           # Rust API on :8787
-npm run dev           # web app on :5173, proxies /api to the API
-```
-
-## Tests
-
-```bash
-npm test
-```
-
-This runs 82 tests:
-- 24 Rust unit tests for the grader, XP rules and placement search.
-- 58 Node tests that start the real server and exercise the game rules over HTTP. These include double submits, revealed answers, rust and prerequisite XP.
-
-The database tests are skipped when Postgres is not running.
